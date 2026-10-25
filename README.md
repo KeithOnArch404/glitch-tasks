@@ -1,74 +1,83 @@
 # GLITCH TASK
 
-> a simple terminal task manager built with Python and SQLite.
+A minimal task manager built with Python and SQLite. Terminal + Web version with glitch aesthetics.
 
-## Descripcion
+A minimal task manager built in Python. It started as a terminal practice using SQLite and evolved into a web version with Flask and glitch animations.
 
-GLITCH TASK es un gestor de tareas para terminal desarrollado en Python.
-Utiliza SQLite para almacenar las tareas de forma permanente.
+## Overview
 
-## Funcionalidades
+GLITCH TASK has two versions sharing the same database:
 
-- Crear tareas
-- Ver tareas pendientes y completadas
-- Completar tareas
-- Desmarcar tareas
-- Editar tareas
-- Eliminar tareas
-- Buscar tareas
-- Mostrar estadisticas de progreso
-- Guardar las tareas usando SQLite
+- CLI: main.py for terminal usage
+- WEB: app.py for browser with glitch styled UI
 
-## Tecnologias
+## Features
 
-- Python
-- SQLite
-- SQL
-- Markdown
+CLI:
+- Create tasks
+- View pending and completed tasks
+- Complete / uncomplete tasks
+- Edit tasks
+- Delete tasks
+- Search tasks
+- Show progress statistics
 
-## Como ejecurar
+WEB (Flask):
+- Full CRUD in browser
+- Glitch / cyberpunk UI with animations
+- Mobile responsive (Termux friendly)
+- Same SQLite persistence
 
-Clona o descarga el proyecto y ejecuta:
+## Tech Stack
 
-```bash
-python main.py
-```
-La base de datos glitch.db se crea automaticamente al ejecutar el programa por primera vez.
+- Python 3.11+
+- Flask
+- SQLite3
+- HTML / CSS / JavaScript
 
-## Uso
+## Installation and Usage
 
-Al iniciar el programa aparecera un menu con las diferentes opciones disponibles:
+Clone:
+  git clone https://github.com/KeithOnArch404/glitch-tasks.git
+  cd glitch-tasks
 
-```
-[GLITCH TASK]
+Run terminal version:
+  python main.py
 
-1. ver tarea
-2. agregar tarea
-3. completar tarea
-4. desmarcar tarea
-5. borrar tarea
-6. editar tarea
-7. buscar tarea
-x. salir
-```
+Run web version:
+  pip install flask
+  python app.py
+  Then open http://localhost:5000
 
-Selecciona una opcion escribiendo el numero correspondiente.
+On Termux:
+  pkg install python
+  pip install flask
+  python app.py
 
-## Base de datos
+## Database
 
-GLITCH TASK utiliza SQLite para guardar las tareas.
+Uses SQLite glitch.db auto-created on first run.
 
-La informacion se guarda en una tabla llamada `tasks`, que contiene:
+Table tasks:
+- id: INTEGER PRIMARY KEY
+- tarea: TEXT
+- completa: INTEGER - 0 = pending, 1 = completed
 
-- `id`: identificador unico de cada tarea.
-- `tarea`: nombre o descripcion de la tarea, asignada por el usuario.
-- `completa`: indica si la tarea esta completada (`1`) o pendiente (`0`).
+## Project Structure
 
-Gracias a SQLite, las tareas permanecen guardadas aunque el programa se cierre.
+  glitchtask/
+    - main.py
+    - app.py
+    - database.py
+    - templates/index.html
+    - static/style.css
+    - static/script.js
 
-## Estado del proyecto
+## Project Status
 
-GLITCH TASK se encuentra actualmente en desarrollo.
+In active development. Started as a learning exercise for Python and SQLite and grew into a functional task manager with a web interface.
 
-El proyecto comenzo como una practica para aprender Python,
-y fue creciendo hasta convertirse en un gestor de tareas funcional con persistencia de datos.
+Next: REST API, dark/light toggle, deploy.
+
+Built on Arch + Termux by Keith.
+
