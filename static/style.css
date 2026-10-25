@@ -1,0 +1,105 @@
+body {
+    background: #111;
+    color: #eee;
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #b000ff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    transition: text-shadow 0.1s;
+}
+
+h2 {
+    color: #b000ff;
+}
+
+.add-task, .search-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    background: #222;
+    color: #eee;
+    border: 1px solid #444;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b000ff;
+}
+
+button {
+    padding: 10px 14px;
+    background: #222;
+    color: #eee;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    border-color: #b000ff;
+    background: #2a0a4a;
+    box-shadow: 0 0 8px #b000ff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-left: 3px solid #b000ff;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.progress {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background: #222;
+    border: 1px solid #444;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #b000ff;
+    width: 0%;
+    box-shadow: 0 0 10px #b000ff;
+}
